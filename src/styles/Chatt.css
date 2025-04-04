@@ -1,0 +1,143 @@
+/* Här är alla stylle för Chatt som finns i App.tsx component som har kopplingar till Message.tsx och 
+ Styling för ol-listan som innehåller meddelanden */
+ ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  /* Styling för varje meddelande */
+  ol li {
+    padding: 0;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%; 
+    max-width: none; 
+    padding: 10px;
+  }
+  
+  ol li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Styling för meddelanden som skickats av användaren */
+  .self {
+    background-color: #d1f7c4;
+    align-self: flex-end;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: auto;
+  }
+  
+  /* Styling för meddelanden som mottagits */
+  .other {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: auto;
+  }
+  
+  /* Styling för komponenten NumberOfMessages */
+  .number-of-messages {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .message-image {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  /* Styling för text i meddelanden */
+  .message-text {
+    font-size: 16px;
+    color: #333;
+  }
+
+  .chatt-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+
+  .message-input {
+    display: flex;
+    gap: 10px;
+  }
+
+  .message-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .message-input button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .message-input button:hover {
+    background-color: #0056b3;
+  }
+
+  .contact-container {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-info {
+    flex: 1;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-info h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .contact-info p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+  }
+
+  .contact-chat {
+    flex: 2;
+  }
