@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
+import "../styles/Shared.css"; // Koppling till Shared.css
 
 function Header() {
   return (
-    <header>
+    <header className="navbar">
       <nav>
-        <ul>
-          <li>
-           {<Link to="/">Home</Link>}
+        <ul className="navbar-list">
+          <li className="navbar-item">
+            <Link to="/">Home</Link>
           </li>
-          <li>
-            {<Link to="/register">Register</Link>}
+          <li className="navbar-item">
+            <Link to="/register">Register</Link>
           </li>
-          <li>
-            {<Link to="/products">Products</Link>}
+          <li className="navbar-item">
+            <Link to="/products">Products</Link>
           </li>
-          <li>
-            {<Link to="/contact">Contact</Link>}
+          <li className="navbar-item">
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>

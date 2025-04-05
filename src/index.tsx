@@ -2,17 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider, Outlet, Link } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact"; // Kontaktkomponent
+import Register from "./components/Register";
+
 import Chatt from "./components/Chatt"; // Chattkomponent
 
 const router = createHashRouter([
   {
     children: [
       { element: <Home />, path: '/' },
-      { element: <About />, path: '/about' },
-      { element: <Contact />, path: '/contact' }, // Kontaktens routing
-      { element: <Chatt />, path: '/chatt' } // Chattens routing
+      { element: <Register />, path: '/register' },
+    
+      { element: <Chatt />, path: '/chatt' } // Chatt
+    
     ],
     element: (
       <>
@@ -22,13 +23,13 @@ const router = createHashRouter([
               <Link to="/">Hem</Link>
             </li>
             <li>
-              <Link to="/about">Om oss</Link>
+              <Link to="/Register">Register</Link>
             </li>
             <li>
               <Link to="/contact">Kontakt</Link>
             </li>
             <li>
-              <Link to="/chatt">Chatt</Link>
+              <Link to="/Produkts">Produkts</Link>
             </li>
           </ul>
         </nav>

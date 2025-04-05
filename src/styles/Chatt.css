@@ -141,3 +141,8 @@
   .contact-chat {
     flex: 2;
   }
+  .reaction {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    color: #fed42c; /* Gul färg för likes */
+  }

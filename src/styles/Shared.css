@@ -25,294 +25,168 @@ h1 {
 }
 
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    width: 100%; /* Gör att root fyller hela bredden */
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
-}
-
-.card {
-    padding: 2em;
-}
-
-.read-the-docs {
-    color: #888;
-}
-
-.product-card {
-    border: 1px solid #ddd; 
-    padding: 15px; 
-    margin: 15px;
-    border-radius: 8px;
-    background-color: #fefefe;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.product-card h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.product-card p {
-    margin: 5px 0;
-    color: #555;
-}
-
-.header {
-    background-color: #585a5c;
-    color: #fff;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header-title {
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-/* Styling för navigeringslänkar */
-.header-nav {
-    display: flex;
-    justify-content: center; /* Centrera länkarna */
-    align-items: center;
+.navbar {
+    background-color: #333;
     padding: 10px 0;
-    background-color: #505255; 
-    width: 100%; 
-    border-radius: 0;
-    box-sizing: border-box; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
+    width: 100%; /* Sträcker sig över hela skärmen */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-.nav-link {
-    color: #fff; 
-    text-decoration: none; 
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; /* Justera länkar från vänster */
+    margin: 0;
+    padding: 0 20px; /* Lägger till lite padding på sidorna */
+}
+
+.navbar-item {
+    margin-right: 20px; /* Mellanrum mellan länkar */
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: white;
     font-size: 16px;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
 }
 
-.nav-link:hover {
-    background-color: #0056b3; 
-    color: #d4e3ff; 
-    text-decoration: underline; 
+.navbar-item a:hover {
+    background-color: #555;
+    border-radius: 4px;
 }
 
-/* Aktiv länk */
-.nav-link.active {
-    background-color: #0056b3; 
-    color: #d4e3ff; 
-}
-
-/* Footer Styling */
 .footer {
     background-color: #f8f9fa;
     color: #333;
     padding: 20px 15px;
+    text-align: center;
     border-top: 1px solid #ddd;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-text {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-}
-
-.footer-nav {
-    display: flex;
-    gap: 15px;
-}
-
-.footer-nav .nav-link {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.footer-nav .nav-link:hover {
-    color: #0056b3;
-}
-
-/* General Styling */
 .App-content {
     padding: 30px;
     text-align: center;
     font-size: 18px;
     color: #333;
     background-color: #f5f5f5;
-    min-height: calc(100vh - 120px); 
+    min-height: calc(100vh - 120px); /* Adjust for header and footer height */
 }
 
-.home {
-    text-align: center;
-    padding: 20px;
+/* Styling för login-formulär */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .login-form {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-button:focus, button:focus-visible {
-    outline: 2px solid #0078d4; /* Se till att detta är ett giltigt värde */
+.login-form h1 {
+  text-align: center;
+  color: #333;
 }
 
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-.contact-container h1 {
-    text-align: center;
-    color: #333;
+.login-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.login-button:hover {
+  background-color: #0056b3;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+.login-message {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
 }
 
-.contact-form textarea {
-    resize: vertical;
-    min-height: 100px;
+.floating-login {
+  position: fixed; /* Gör formuläret flytande */
+  top: 50%; /* Centrera vertikalt */
+  left: 20px; /* Placera det nära vänsterkanten */
+  transform: translateY(-50%); /* Justera för att centrera exakt */
+  z-index: 1000; /* Se till att det ligger ovanpå andra element */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till en skugga för att framhäva det */
 }
 
-.contact-form button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+.floating-login .login-form {
+  background-color: #fff; /* Gör bakgrunden vit */
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
-.contact-form button:hover {
-    background-color: #0056b3;
+/* Styling för Home */
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.response-message {
-    margin-top: 10px;
-    text-align: center;
-    color: #007bff;
-    font-size: 14px;
+.home-intro {
+  margin-bottom: 20px;
 }
 
-.register-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.home-intro h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.register-container h1 {
-    text-align: center;
-    color: #333;
+.home-intro p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-.register-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.register-container input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.register-container button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.register-container button:hover {
-    background-color: #0056b3;
-}
-
-.register-container a {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.register-container a:hover {
-    text-decoration: underline;
+.home-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 

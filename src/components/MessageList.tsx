@@ -40,7 +40,13 @@ const MessageList: React.FC<MessageListProps> = ({ initialMessages }) => {
   }
 
   const like = (message: MessageType) => {
-    console.log("Liked message:", message);
+    setMessages((prevMessages) =>
+      prevMessages.map((msg) =>
+        msg.id === message.id
+          ? { ...msg, reaction: msg.reaction === "👍" ? null : "👍" } 
+          : msg
+      )
+    );
   };
 
   return (

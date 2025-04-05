@@ -1,36 +1,74 @@
 import React, { useState } from "react";
-import "../styles/Shared.css"; // Koppling till Shared.css
-import { Link, useNavigate } from "react-router-dom";
+import "../styles/Register.css";
 
 const Register: React.FC = () => {
-  const [formData, setFormData] = useState({ username: "", password: "" });
-  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    companyName: "",
+    contactPerson: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    navigate("/");
+
+    // Save user data to localStorage
+    localStorage.setItem("userData", JSON.stringify(formData));
+    alert("Registrering lyckades!");
+
+    // Redirect to home page with login form
+    window.location.href = "/";
   };
 
   return (
     <div className="register-container">
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="register-form" autoComplete="off">
+        <h1>Registrera dig</h1>
         <input
           type="text"
-          placeholder="Username"
-          value={formData.username}
-          onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+          name="companyName"
+          placeholder="Företagsnamn"
+          value={formData.companyName}
+          onChange={handleChange}
+          autoComplete="off"
+          required
+        />
+        <input
+          type="text"
+          name="contactPerson"
+          placeholder="Kontaktperson"
+          value={formData.contactPerson}
+          onChange={handleChange}
+          autoComplete="off"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="E-post"
+          value={formData.email}
+          onChange={handleChange}
+          autoComplete="off"
+          required
         />
         <input
           type="password"
-          placeholder="Password"
+          name="password"
+          placeholder="Lösenord"
           value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+          onChange={handleChange}
+          autoComplete="off"
+          required
         />
-        <button type="submit">Register</button>
+        <button type="submit" className="submit-button">
+          Registrera
+        </button>
       </form>
-      <Link to="/">Back to Home</Link>
     </div>
   );
 };

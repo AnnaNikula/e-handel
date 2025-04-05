@@ -1,7 +1,6 @@
 import React from "react";
-import "../styles/Chatt.css"; // Koppling till Chatt.css
-import "../styles/Shared.css"; // Koppling till Shared.css
-import Chattbild from "../assets/Chattbild.png"; // Importera bild
+import "../styles/Chatt.css"; 
+import "../styles/Shared.css"; 
 import MessageList, { MessageType } from "./MessageList";
 
 const Contact: React.FC = () => {
@@ -9,9 +8,9 @@ const Contact: React.FC = () => {
     {
       delivered: true,
       id: 1,
-      reaction: "👍",
+      reaction: "👍", //Jhon förklarat att det kräver Hantering av State, Typing, Rendering och css, i MessageList finns funktion, p webbsida like genom klika på meddelandet inte bästa UX men 
       self: true,
-      content: "Hej! Hur kan vi hjälpa dig?",
+      content: "Hej! test?",
       time: "12:00",
     },
     {
@@ -19,7 +18,7 @@ const Contact: React.FC = () => {
       id: 2,
       reaction: null,
       self: false,
-      content: "Hej! Jag har en fråga om er produkt.",
+      content: "Hej! jag är här.",
       time: "12:01",
     },
   ];
