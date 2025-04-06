@@ -1,12 +1,12 @@
 
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 interface MessageType {
     id: number;
     content: string;
 }
 
-
+// Jag ska jobba med den kod senare
 interface NumberOfMessagesProps {
     messages: MessageType[];
 }
