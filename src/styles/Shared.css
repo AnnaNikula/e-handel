@@ -18,10 +18,14 @@ body {
     background-color: #f4f4f4;
 }
 
+/* General styles for <h1> elements */
 h1 {
-    color: #333;
-    text-align: center;
-    margin-top: 20px;
+    font-size: 2rem; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #333; /* Dark gray color */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Add spacing above and below */
+    font-family: Arial, sans-serif; /* Ensure consistent font */
 }
 
 #root {
@@ -34,7 +38,7 @@ h1 {
 .navbar {
     background-color: #333;
     padding: 10px 0;
-    width: 100%; /* Sträcker sig över hela skärmen */
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -43,13 +47,13 @@ h1 {
 .navbar-list {
     list-style: none;
     display: flex;
-    justify-content: flex-start; /* Justera länkar från vänster */
+    justify-content: center;
     margin: 0;
-    padding: 0 20px; /* Lägger till lite padding på sidorna */
+    padding: 0;
 }
 
 .navbar-item {
-    margin-right: 20px; /* Mellanrum mellan länkar */
+    margin: 0 15px;
 }
 
 .navbar-item a {

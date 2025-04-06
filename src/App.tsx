@@ -17,7 +17,7 @@ function App() {
         { element: <Home />, path: '/' },
         { element: <Register />, path: '/register' },
         { element: <Contact />, path: '/contact' },
-        { element: <ProductList />, path: '/products' }
+        { element: <ProductList />, path: '/ProductList' }
       ],
       element: (
         <>

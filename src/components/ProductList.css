@@ -1,7 +1,0 @@
-/* Basic styles for ProductList */
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 16px;
-}

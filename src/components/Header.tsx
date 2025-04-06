@@ -1,27 +1,26 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Shared.css"; // Koppling till Shared.css
+import "../styles/Header.css";
 
-function Header() {
+const Header: React.FC = () => {
   return (
     <header className="navbar">
-      <nav>
-        <ul className="navbar-list">
-          <li className="navbar-item">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/register">Register</Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/products">Products</Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+      <ul className="navbar-list">
+        <li className="navbar-item">
+          <Link to="/">Hem</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/register">Registrera</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/contact">Kontakt</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/ProductList">Produkter</Link>
+        </li>
+      </ul>
     </header>
   );
-}
+};
 
 export default Header;

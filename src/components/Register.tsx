@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Register.css";
 
 const Register: React.FC = () => {
@@ -9,6 +10,8 @@ const Register: React.FC = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -17,25 +20,31 @@ const Register: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    const storedData = JSON.parse(localStorage.getItem("userData") || "{}");
+
+    if (storedData.email === formData.email) {
+      alert("En användare med denna e-postadress är redan registrerad.");
+      return;
+    }
+
     // Save user data to localStorage
     localStorage.setItem("userData", JSON.stringify(formData));
     alert("Registrering lyckades!");
 
-    // Redirect to home page with login form
-    window.location.href = "/";
+    // Redirect to ProductList page
+    navigate("/ProductList");
   };
 
   return (
     <div className="register-container">
-      <form onSubmit={handleSubmit} className="register-form" autoComplete="off">
-        <h1>Registrera dig</h1>
+      <form onSubmit={handleSubmit} className="register-form">
+        <h1>E-Handel</h1>
         <input
           type="text"
           name="companyName"
           placeholder="Företagsnamn"
           value={formData.companyName}
           onChange={handleChange}
-          autoComplete="off"
           required
         />
         <input
@@ -44,7 +53,6 @@ const Register: React.FC = () => {
           placeholder="Kontaktperson"
           value={formData.contactPerson}
           onChange={handleChange}
-          autoComplete="off"
           required
         />
         <input
@@ -53,7 +61,6 @@ const Register: React.FC = () => {
           placeholder="E-post"
           value={formData.email}
           onChange={handleChange}
-          autoComplete="off"
           required
         />
         <input
@@ -62,7 +69,6 @@ const Register: React.FC = () => {
           placeholder="Lösenord"
           value={formData.password}
           onChange={handleChange}
-          autoComplete="off"
           required
         />
         <button type="submit" className="submit-button">
