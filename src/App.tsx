@@ -16,8 +16,9 @@ function App() {
       children: [
         { element: <Home />, path: '/' },
         { element: <Register />, path: '/register' },
-        { element: <Contact />, path: '/contact' },
-        { element: <ProductList />, path: '/ProductList' }
+        { element: <ProductList />, path: '/ProductList' },
+        { element: <Contact />, path: '/contact' }
+        
       ],
       element: (
         <>

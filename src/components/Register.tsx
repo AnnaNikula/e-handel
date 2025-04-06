@@ -64,7 +64,7 @@ const Register: React.FC = () => {
           required
         />
         <input
-          type="password"
+          type="text"
           name="password"
           placeholder="Lösenord"
           value={formData.password}

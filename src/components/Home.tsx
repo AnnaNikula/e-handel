@@ -7,8 +7,8 @@ const Home: React.FC = () => {
     email: "",
     password: "",
   });
-
-  const navigate = useNavigate(); // Initialize navigate
+  
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -18,16 +18,15 @@ const Home: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Retrieve stored user data from localStorage
+    // ta användare data från  localStorage
     const storedData = JSON.parse(localStorage.getItem("userData") || "{}");
 
-    // Validate credentials
     if (
       storedData.email === formData.email &&
       storedData.password === formData.password
     ) {
       alert("Inloggning lyckades!");
-      // Redirect to ProductList page
+      // Redirect to ProductList sida
       navigate("/ProductList");
     } else {
       alert("Felaktiga inloggningsuppgifter. Försök igen.");
@@ -48,15 +47,17 @@ const Home: React.FC = () => {
           autoComplete="off"
           required
         />
-        <input
-          type="password"
-          name="password"
-          placeholder="Lösenord"
-          value={formData.password}
-          onChange={handleChange}
-          autoComplete="off"
-          required
-        />
+        <div className="password-container">
+          <input
+            type= "text"
+            name="password"
+            placeholder="Lösenord"
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete="off"
+            required
+          />
+        </div>
         <button type="submit" className="login-button">
           Logga in
         </button>
